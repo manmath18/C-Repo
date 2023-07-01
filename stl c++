@@ -298,3 +298,49 @@ int main()
     return 0;
 }
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//merge two sorted arrays
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include<iostream>
+#include<algorithm>
+#include<array>
+using namespace std;
+void merge(int a1[],int n,int a2[],int m,int a3[],int x){
+    int i=0,j=0,k=0;
+    while(i<n && j<m){
+      if(a1[i]<a2[j]){
+          a3[k++]=a1[i++];
+      } 
+      else{
+          a3[k++]=a2[j++];
+      }
+    }
+    while(i<n){
+        a3[k++]=a1[i++];
+    }
+    while(j<m){
+        a3[k++]=a2[j++];
+    }
+}
+void print(int a3[],int n){
+    for(int i=0;i<n;i++){
+        cout<<a3[i]<<" ";
+    }
+}
+int main()
+{
+    int a1[7]={2,4,5,6,7,8,9};
+    int a2[4]={1,3,10,11};
+    int a3[11];
+    merge(a1,7,a2,4,a3,11);
+    print(a3,11);
+
+    return 0;
+}
+########################################################################################################################################################
