@@ -404,6 +404,8 @@ int main()
 //adding arrays
 #include <iostream>
 #include<array>
+#include<vector>
+#include<algorithm>
 using namespace std;
 int main()
 {
@@ -413,10 +415,23 @@ int main()
      for(int i=0;i<4;i++){
          num1=(num1*10)+v[i];
      }
+     cout<<num1<<endl;
      for(int j=0;j<3;j++){
          num2=(num2*10)+x[j];
      }
-     cout<<num1+num2<<endl;
+     cout<<num2<<endl;
+    int m=num1+num2;
+    cout<<m<<endl;
+    vector<int> a;
+    while(m!=0){
+       a.push_back(m%10);
+       m=m/10;
+    }
+    reverse(a.begin(),a.end());
+    for(int it:a){
+        cout<<it<<" ";
+    }
+    cout<<endl;
     return 0;
 }
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
